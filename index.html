@@ -1,348 +1,132 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Ayoub Kirouane's personal website. I like building Machine Learning models from scratch." />
+    <meta name="keywords" content="Ayoub Kirouane, Machine Learning, Deep Learning, AI, Portfolio, Blog, Projects" />
+    <meta name="author" content="Ayoub Kirouane" />
+    <meta property="og:title" content="Ayoub Kirouane - AI Engineer" />
+    <meta property="og:description" content="Building the future of AI, one model at a time." />
+    <meta property="og:image" content="https://avatars.githubusercontent.com/u/99510125?s=400&u=cf37844379bf5709cd4b478951248f2dc7d5695e&v=4" />
+    <meta property="og:url" content="https://kirouane-ayoub.github.io/" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <title>Ayoub Kirouane - AI Engineer</title>
     <link rel="icon" href="favicon.png" type="image/x-icon">
-    <title>kirouane-Ayoub</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <!-- Profile Section -->
-    <div class="profile">
-      <img
-        src="https://avatars.githubusercontent.com/u/99510125?s=400&u=cf37844379bf5709cd4b478951248f2dc7d5695e&v=4"
-        alt="Profile Picture"
-        class="profile-img"
-      />
-      <div class="profile-info">
-        <h1>Kirouane Ayoub</h1>
-        <p>I like building Machine Learning models from scratch 🧠</p>
-        <div class="profile-icons">
-          <a href="https://x.com/ayoub_kirouane" target="_blank"
-            ><img
-              src="icons/icons8-twitter.gif"
-              alt="Twitter"
-              style="width: 24px; height: 24px"
-          /></a>
-          <a href="https://github.com/kirouane-Ayoub" target="_blank"
-            ><img
-              src="icons/icons8-github.gif"
-              alt="GitHub"
-              style="width: 24px; height: 24px"
-          /></a>
-          <a href="mailto:AyoubKirouane@proton.me"
-            ><img
-              src="icons/icons8-mail.gif"
-              alt="Email"
-              style="width: 24px; height: 24px"
-          /></a>
-          <a href="https://www.linkedin.com/in/ayoub-kirouane3" target="_blank"
-            ><img
-              src="icons/icons8-linked-in.gif"
-              alt="Twitter"
-              style="width: 24px; height: 24px"
-          /></a>
-          <a href="https://medium.com/@ayoubkirouane3" target="_blank"
-            ><img
-              src="icons/icons8-medium.gif"
-              alt="Twitter"
-              style="width: 24px; height: 24px"
-          /></a>
+</head>
+<body class="dark-mode">
+    <div id="particles-js"></div>
+    <header class="main-header">
+        <div class="container">
+            <a href="#" class="logo">Ayoub Kirouane</a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#blog">Blog</a></li>
+                    <li><a href="#tiktok">TikTok</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <button class="theme-toggler" id="theme-toggler" aria-label="Toggle theme">☀️</button>
         </div>
-      </div>
-    </div>
-    <div style="background-color: #ffffff; padding-top: 1px; margin-top: 10px">
-      <div id="featured-talks" class="container">
-        <div class="ctitle">Blog Posts ✍️</div>
-        <div class="row">
-          <div class="card">
-            <a
-              href="https://www.linkedin.com/pulse/rlhf-dpo-simplifying-enhancing-fine-tuning-language-models-kirouane"
-            >
-              <div class="ccimg">
-                <img
-                  src="https://media.licdn.com/dms/image/D4E12AQFNuSL7jBfKoQ/article-cover_image-shrink_720_1280/0/1694354205667?e=2147483647&v=beta&t=W5AZGBTrMVbOYOv8Y8pPstb5S_mV0489TEVToWT9ltI"
-                />
-              </div>
-            </a>
-            <div class="cdesc">
-              RLHF & DPO: Simplifying and Enhancing Fine-Tuning for Language
-              Models
-            </div>
-          </div>
-          <div class="card">
-            <a
-              href="https://www.linkedin.com/pulse/understanding-mixtral-8x7b-dive-mixture-experts-moe-ayoub-kirouane-k7d1e/"
-            >
-              <div class="ccimg">
-                <img
-                  src="https://cdn-images-1.medium.com/v2/resize:fit:800/1*S6IvhqzdI7491WKPgzg8-w.png"
-                />
-              </div>
-            </a>
-            <div class="cdesc">
-              Understanding Mixtral-8x7B: A Dive into Mixture of Experts (MoE)
-              Architecture
-            </div>
-          </div>
-          <div class="card">
-            <a
-              href="https://www.linkedin.com/pulse/flash-attention-accelerating-deep-learning-ayoub-kirouane/"
-            >
-              <div class="ccimg">
-                <img
-                  src="https://miro.medium.com/v2/resize:fit:720/format:webp/1*dtp8WLWtuG1y4KNDTpvC9w.png"
-                />
-              </div>
-            </a>
-            <div class="cdesc">
-              Flash Attention: Accelerating Deep Learning with Memory-Efficient
-              Transformers
-            </div>
-          </div>
-          <div class="card">
-            <a
-              href="https://www.linkedin.com/pulse/grokking-deep-dive-delayed-generalization-neural-kirouane--kfc3e/"
-            >
-              <div class="ccimg">
-                <img
-                  src="https://arxiv.org/html/2405.19454v1/x1.png"
-                />
-              </div>
-            </a>
-            <div class="cdesc">
-              Grokking: A Deep Dive into Delayed Generalization in Neural
-              Networks
-            </div>
-          </div>
-          <div class="card">
-            <a
-              href="https://www.linkedin.com/pulse/mixture-of-agents-enhances-large-language-model-ayoub-kirouane-ktgce/"
-            >
-              <div class="ccimg">
-                <img
-                  src="https://media.licdn.com/dms/image/D4E12AQGzRP_Ypr6C-A/article-cover_image-shrink_720_1280/0/1718368542820?e=2147483647&v=beta&t=vEv8iXgeFxOUgK9T9tAzbRSVejlddw12pKvTVTy2V48"
-                />
-              </div>
-            </a>
-            <div class="cdesc">
-              Mixture-of-Agents Enhances Large Language Model Capabilities: A
-              Comprehensive Overview
-            </div>
-          </div>
-          <div class="card">
-            <a
-              href="https://blog.gopenai.com/accelerate-your-pytorch-models-with-torch-tensorrt-a-practical-approach-7742fd6b9a05"
-            >
-              <div class="ccimg">
-                <img
-                  src="https://miro.medium.com/v2/resize:fit:640/format:webp/1*11YhOSUwKKRdk5c81PP0yA.png"
-                />
-              </div>
-            </a>
-            <div class="cdesc">
-                  Accelerate Your PyTorch Models with Torch-TensorRT: A Practical Approach
-            </div>
-          </div>
-          <div class="card">
-            <a
-              href="https://blog.gopenai.com/accelerating-large-language-models-with-tensorrt-llm-db928323ddbf"
-            >
-              <div class="ccimg">
-                <img
-                  src="https://miro.medium.com/v2/resize:fit:720/format:webp/1*GV9X3A0TygiBBHGS6dN_aw.png"
-                />
-              </div>
-            </a> 
-            <div class="cdesc">
-              Accelerating Large Language Models with TensorRT-LLM and Serving (OpenAI-Compatible API)
-            </div>
-          </div>
-          <div class="card">
-            <a
-              href="https://sembosa.netlify.app/other/openai-compatible-api"
-            >
-              <div class="ccimg">
-                <img
-                  src="https://miro.medium.com/v2/resize:fit:1400/1*2yQrjX9aqfKjvjSf4Wovbw.png"
-                />
-              </div>
-            </a> 
-            <div class="cdesc">
-              A Step by Step Guide to Build your Own OpenAI-Compatible API 🌐
-            </div>
-          </div>
-          <div class="card">
-            <a
-              href="https://medium.com/gopenai/from-pytorch-to-production-optimizing-dl-models-with-tensorrt-13202e59c592"
-            >
-              <div class="ccimg">
-                <img
-                  src="https://miro.medium.com/v2/resize:fit:640/format:webp/1*GIo533JkmbfRIXSwR-Rwgg.png"
-                />
-              </div>
-            </a>
-            <div class="cdesc">
-              From PyTorch to Production: Optimizing DL models With TensorRT
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div style="background-color: #ffffff; padding-top: 1px; margin-top: 10px">
-      <div id="featured-talks" class="container">
-        <div class="ctitle">Hands-On Projects 🖥️</div>
-        <div class="row">
-          <div class="card">
-            <a
-              href="https://medium.com/@ayoubkirouane3/building-an-effective-rag-pipeline-a-guide-to-integrating-self-rag-corrective-rag-and-adaptive-ab7767f8ead1"
-            >
-              <div class="ccimg">
-                <img
-                  src="https://miro.medium.com/v2/resize:fit:1100/format:webp/1*dQFQcUvKVcBpaVRV_z0ehQ.png"
-                />
-              </div>
-            </a>
-            <div class="cdesc">
-              Building an Effective RAG Pipeline 🕸️🔗🦜 : A Guide to Integrating
-              Self-RAG, Corrective RAG, and Adaptive RAG
-            </div>
-          </div>
-          <div class="card">
-            <a
-              href="https://medium.com/@ayoubkirouane3/build-your-own-crag-system-with-cohere-a-step-by-step-guide-to-improving-language-model-accuracy-4065c4cccbf0"
-            >
-              <div class="ccimg">
-                <img
-                  src="https://miro.medium.com/v2/resize:fit:720/format:webp/1*9RCG6Bg_fN-4qhDXZejCGw.png"
-                />
-              </div>
-            </a>
-            <div class="cdesc">
-              A Step-by-Step Guide to Improving Language Model Accuracy with
-              Corrective Retrieval-Augmented Generation 🕸️🔗🦜
-            </div>
-          </div>
-          <div class="card">
-            <a
-              href="https://medium.com/@ayoubkirouane3/our-mamba-model-journey-reflections-and-exciting-next-steps-for-darija-ai-fe856594f298"
-            >
-              <div class="ccimg">
-                <img
-                  src="https://miro.medium.com/v2/resize:fit:720/format:webp/1*-WdZaCpK5rItax72Z-tGZQ.jpeg"
-                />
-              </div>
-            </a>
-            <div class="cdesc">
-              Mamba4Darija 🐍: A Step by Step Guide to build and train Mamba model from scratch on Algerian Darija
-            </div>
-          </div>
-          <div class="card">
-            <a
-              href="https://medium.com/@ayoubkirouane3/darija-gpt-lets-make-machines-understand-our-language-860a4ed270da"
-            >
-              <div class="ccimg">
-                <img
-                  src="https://miro.medium.com/v2/resize:fit:720/format:webp/1*iPwFGMs3ZuCsXvyABnlrwg.jpeg"
-                />
-              </div>
-            </a>
-              </a>
-            <div class="cdesc">
-              Darija-GPT: A Step by Step Guide to build and train GPT2 from scratch on Algerian Darija
-            </div>
-          </div>
-          <div class="card">
-            <a
-              href="https://medium.com/@ayoubkirouane3/llama-2-speaks-darija-from-scratch-to-darija-mastery-46157049ef9a"
-            >
-              <div class="ccimg">
-                <img
-                  src="https://miro.medium.com/v2/resize:fit:720/format:webp/1*Ohfs54DxI9j_XTJSRMGPMA.jpeg"
-                />
-              </div>
-            </a>
-            <div class="cdesc">
-              Llama 2 🦙 Speaks Darija: A Step by Step Guide to build and train llama2  from scratch on Algerian Darija
-            </div>
-          </div>
-          <div class="card">
-            <a
-              href="https://medium.com/@ayoubkirouane3/asalam-alaikom-brothers-and-sisters-and-welcome-back-to-our-exciting-series-where-were-619485b6ea35"
-            >
-              <div class="ccimg">
-                <img
-                  src="https://miro.medium.com/v2/resize:fit:720/format:webp/1*x78dOTtxjP98vT19XAZa0A.jpeg"
-                />
-              </div>
-            </a>
-            <div class="cdesc">
-              Building the Mistral 7B Model from Scratch: A New Chapter for Algerian Darija
-            </div>
-          </div>
-          <div class="card">
-            <a
-              href="https://blog.gopenai.com/building-a-custom-mixture-of-experts-model-for-our-darija-from-tokenization-to-text-generation-b30ba49ae7cc"
-            >
-              <div class="ccimg">
-                <img
-                  src="https://miro.medium.com/v2/resize:fit:720/format:webp/1*jyCH23k1A-RzR6nsKehVSA.jpeg"
-                />
-              </div>
-            </a>
-            <div class="cdesc">
-              Building a Custom Mixture of Experts Model for our Darija: From Tokenization to Text Generation
-            </div>
-          </div>
-          <div class="card">
-            <a
-              href="https://medium.com/@ayoubkirouane3/completing-the-circle-building-a-mambatransformer-from-scratch-f92a02381bc8"
-            >
-              <div class="ccimg">
-                <img
-                  src="https://miro.medium.com/v2/resize:fit:640/format:webp/1*CnxHSQt7KbVj444giNLxZQ.jpeg"
-                />
-              </div>
-            </a>
-            <div class="cdesc">
-              Completing the Circle : Building a custom Mamba-Transformer from Scratch
-            </div>
-          </div>
-          <div class="card">
-            <a
-              href="https://blog.gopenai.com/optimizing-our-llms-exploring-down-scaling-and-depth-up-scaling-techniques-2434d81bc433"
-            >
-              <div class="ccimg">
-                <img
-                  src="https://miro.medium.com/v2/resize:fit:720/format:webp/1*4nc5ApgHOa0u2kHolMWPkg.jpeg"
-                />
-              </div>
-            </a>
-            <div class="cdesc">
-              Optimizing Our LLMs : Exploring Down-Scaling and Depth Up-Scaling Techniques
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div style="background-color: #ffffff; padding-top: 1px; margin-top: 10px">
-      <div id="open-source" class="container">
-        <div class="ctitle">Open Source Models and Datasets 🤗 </div>
-        <p>Check my <strong>Hugging Face</strong> Profile for more models and datasets: 
-          <a href="https://huggingface.co/ayoubkirouane" target="_blank">Kirouane-Ayoub</a>
-        </p>
-      </div>
-    </div>
+    </header>
 
-    <div style="background-color: #ffffff; padding-top: 1px; margin-top: 10px">
-      <div id="my-projects" class="container">
-        <div class="ctitle">My Projects 🚀</div>
-      </div>
-    </div>
-    <div id="content"></div>
+    <main>
+        <section id="hero" class="hero-section">
+            <div class="container">
+                <img src="https://avatars.githubusercontent.com/u/99510125?s=400&u=cf37844379bf5709cd4b478951248f2dc7d5695e&v=4" alt="Ayoub Kirouane" class="profile-img">
+                <h1 class="hero-title">Ayoub Kirouane</h1>
+                <p id="bio" class="hero-bio">I build intelligent systems from scratch.</p>
+            </div>
+        </section>
 
-    <!-- Showdown.js CDN -->
+        <div class="social-bar">
+            <a href="https://x.com/ayoub_kirouane" target="_blank" aria-label="Twitter">
+                <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                </svg>
+            </a>
+            <a href="https://github.com/kirouane-Ayoub" target="_blank" aria-label="GitHub">
+                <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.91 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                </svg>
+            </a>
+            <a href="mailto:AyoubKirouane@proton.me" aria-label="Email">
+                <svg class="social-icon" viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+            </a>
+            <a href="https://www.linkedin.com/in/ayoub-kirouane3" target="_blank" aria-label="LinkedIn">
+                <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                </svg>
+            </a>
+            <a href="https://medium.com/@ayoubkirouane3" target="_blank" aria-label="Medium">
+                <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1.92 13.28h-1.2V8.72h1.2v4.56zm-2.4-6.32c0-.53.43-.96.96-.96s.96.43.96.96-.43.96-.96.96-.96-.43-.96-.96zm6.72 6.32h-1.2V8.72h1.2v4.56zm-2.4-6.32c0-.53.43-.96.96-.96s.96.43.96.96-.43.96-.96.96-.96-.43-.96-.96zm6.72 6.32h-1.2V8.72h1.2v4.56z"/>
+                </svg>
+            </a>
+            <a href="https://www.tiktok.com/@ayoub.kirouane" target="_blank" aria-label="TikTok">
+                <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.28-1.1-.68-1.62-1.18-.21 2.32.05 4.84-.28 7.1-.24 1.62-1.04 3.2-2.42 4.32-1.46 1.18-3.33 1.8-5.18 1.87v-4.03c1.44.05 2.89.35 4.2.97.57.28 1.1.68 1.62 1.18.21-2.32-.05-4.84.28-7.1.24-1.62 1.04-3.2 2.42-4.32 1.46-1.18 3.33-1.8 5.18-1.87v-4.03c-1.44.05-2.89.35-4.2.97-.57-.28-1.1-.68-1.62-1.18-.21 2.32.05 4.84-.28 7.1-.24 1.62-1.04 3.2-2.42 4.32-1.46-1.18-3.33-1.8-5.18-1.87V3.86c1.85-.07 3.7-.58 5.18-1.87C11.48 1.04 12.44.49 12.525.02z"/>
+                </svg>
+            </a>
+        </div>
+
+        <section id="about" class="content-section">
+            <div class="container">
+                <h2 class="section-title">About Me</h2>
+                <p id="about-text">I am a passionate Machine Learning Engineer with a strong focus on building end-to-end AI solutions. My expertise lies in developing, training, and deploying large-scale language models and retrieval-augmented generation systems. I thrive on the challenge of creating intelligent systems from the ground up, from data processing and model architecture to optimization and deployment.</p>
+            </div>
+        </section>
+
+        <section id="projects" class="content-section">
+            <div class="container">
+                <h2 class="section-title">My Simple Projects</h2>
+                <div id="projects-container" class="grid-container">
+                    <!-- Projects will be injected here -->
+                </div>
+            </div>
+        </section>
+
+        <section id="blog" class="content-section">
+            <div class="container">
+                <h2 class="section-title">Latest Blog Posts</h2>
+                <div id="blog-container" class="grid-container">
+                    <!-- Blog posts will be injected here -->
+                </div>
+            </div>
+        </section>
+
+        <section id="tiktok" class="content-section">
+            <div class="container">
+                <h2 class="section-title">Latest on TikTok</h2>
+                <div id="tiktok-container" class="grid-container">
+                    <!-- TikTok videos will be injected here -->
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="content-section">
+            <div class="container">
+                <h2 class="section-title">Get In Touch</h2>
+                <p>I'm always open to discussing new projects, collaborations, or just chatting about the future of AI. Feel free to reach out!</p>
+                <a href="mailto:AyoubKirouane@proton.me" class="cta-button">Contact Me</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer-bar">
+        <div class="container">
+            <p>&copy; 2025 Ayoub Kirouane. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/showdown@2.1.0/dist/showdown.min.js"></script>
     <script src="main.js"></script>
-  </body>
+</body>
 </html>

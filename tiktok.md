@@ -1,0 +1,6 @@
+- [The Hardest AI System I’ve Ever Built ..](https://www.tiktok.com/@ayoub.kirouane/video/7535178197613219093)
+- [How I Built a Scalable Voice Cloning API ..](https://www.tiktok.com/@ayoub.kirouane/video/7533561385536556309)
+- [How I Built a Real-Time Custom TTS System from Scratch..](https://www.tiktok.com/@ayoub.kirouane/video/7532426780515355925)
+- [How I Built a Smart PDF Parser for Complex Visual Docs ..](https://www.tiktok.com/@ayoub.kirouane/video/7531626706629741880)
+- [How I Made a Vision RAG System That Doesn’t Need Parsing ..](https://www.tiktok.com/@ayoub.kirouane/video/7530577473478675768)
+- [What I Did When My SLM Struggled With Complex Function Calls ..](https://www.tiktok.com/@ayoub.kirouane/video/7529289943097625862)
