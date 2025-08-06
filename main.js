@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const bioElement = document.getElementById("bio");
     if (bioElement) {
-        const bioText = "I build intelligent systems from scratch.";
+        const bioText = "I build intelligent systems from scratch...";
         // Use a speed of ~60ms for a more deliberate streaming feel
         typewriter("bio", bioText, 60);
     }
