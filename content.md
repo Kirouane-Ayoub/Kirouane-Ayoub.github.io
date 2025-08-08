@@ -17,4 +17,4 @@
 - [PDF-Parser-API](https://github.com/Kirouane-Ayoub/PDF-Parser-API): A production-grade FastAPI service for processing PDF files . [Parsing, Fast-API, Python]
 - [Speech 2 Text Data Labeler](https://github.com/Kirouane-Ayoub/STT-Data-Labeler): A simple web app for creating labeled speech datasets by pairing text labels with recorded audio samples. [Gradio, Python , STT , STT ,Data Labeling]
 - [PDF Image Labeling Tool](https://github.com/Kirouane-Ayoub/PDF-Image-Labeling): A web-based tool for converting PDF files into images, labeling each page, and exporting a machine learning-ready dataset. [Gradio, Python , Data Labeling]
-- [Voice Cloning API](https://github.com/Kirouane-Ayoub/Voice-Clonning-API):Production-grade API for voice cloning using multiple TTS (Text-to-Speech) models, including Zonos and ChatterboxTTS. [Voice cloning, Python , STT , STT]
+- [Voice Cloning API](https://github.com/Kirouane-Ayoub/Voice-Clonning-API):Production-grade API for voice cloning using multiple TTS (Text-to-Speech) models, including Zonos and ChatterboxTTS. [Voice cloning, Python , STT , STT ,Fast-API]
