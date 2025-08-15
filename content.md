@@ -13,8 +13,8 @@
 - [Custom-Nano-Llama2](https://github.com/Kirouane-Ayoub/Llama2-Speaks-Darija): A nano version of the Llama2 model trained on Algerian Darija. [LLM, Fine-Tuning, Llama2 , Transformers]
 
 ### AI Tooling
-- [LLMs Playground](https://github.com/Kirouane-Ayoub/Mesop-LLM-Playground): A playground to experiment with different LLMs and architectures. [Mesop, HuggingFace, API]
 - [PDF-Parser-API](https://github.com/Kirouane-Ayoub/PDF-Parser-API): A production-grade FastAPI service for processing PDF files . [Parsing, Fast-API, Python]
 - [Speech 2 Text Data Labeler](https://github.com/Kirouane-Ayoub/STT-Data-Labeler): A simple web app for creating labeled speech datasets by pairing text labels with recorded audio samples. [Gradio, Python , STT , STT ,Data Labeling]
 - [PDF Image Labeling Tool](https://github.com/Kirouane-Ayoub/PDF-Image-Labeling): A web-based tool for converting PDF files into images, labeling each page, and exporting a machine learning-ready dataset. [Gradio, Python , Data Labeling]
 - [Voice Cloning API](https://github.com/Kirouane-Ayoub/Voice-Clonning-API): Production-grade API for voice cloning using multiple TTS (Text-to-Speech) models, including Zonos and ChatterboxTTS. [Voice cloning, Python , STT , STT ,Fast-API]
+- [ColBERT-Qdrant](https://github.com/Kirouane-Ayoub/ColBERT-Qdrant): A FastAPI-based microservice for generating ColBERT multivector embeddings and indexing/searching them in Qdrant vector database. [Python , Embedding ,Fast-API]

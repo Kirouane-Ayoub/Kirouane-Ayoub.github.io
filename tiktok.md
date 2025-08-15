@@ -4,3 +4,5 @@
 - [How I Built a Smart PDF Parser for Complex Visual Docs ..](https://www.tiktok.com/@ayoub.kirouane/video/7531626706629741880)
 - [How I Made a Vision RAG System That Doesn’t Need Parsing ..](https://www.tiktok.com/@ayoub.kirouane/video/7530577473478675768)
 - [What I Did When My SLM Struggled With Complex Function Calls ..](https://www.tiktok.com/@ayoub.kirouane/video/7529289943097625862)
+- [How I Built a High-Performance Retriever Pipeline ..](https://www.tiktok.com/@ayoub.kirouane/video/7537860522138438913)
+- [My Text-to-Graph Optimization Story ..](https://www.tiktok.com/@ayoub.kirouane/video/7538595608190340353)
