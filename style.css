@@ -27,7 +27,7 @@ body {
     background-color: var(--color-bg);
     color: var(--color-text);
     line-height: 1.6;
-    max-width: 680px;
+    max-width: 1050px;
     margin: 0 auto;
     padding: 0 1.5rem;
 }
