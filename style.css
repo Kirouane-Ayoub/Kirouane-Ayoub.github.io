@@ -181,6 +181,7 @@ footer p {
     font-family: var(--font-mono);
     font-size: 0.8rem;
     color: var(--color-text-tertiary);
+    text-align: center;
 }
 
 /* Responsive */
