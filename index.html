@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Ayoub Kirouane — AI Engineer. Building intelligent systems from scratch." />
-    <meta name="keywords" content="Ayoub Kirouane, Machine Learning, Deep Learning, AI, Portfolio" />
+    <meta name="description" content="Ayoub Kirouane — ML Lead at Kiefer TEK, heading the Sophea Research Lab. Language models, retrieval systems, and production ML tooling." />
+    <meta name="keywords" content="Ayoub Kirouane, Machine Learning, Deep Learning, AI, LLM, Research, Portfolio" />
     <meta name="author" content="Ayoub Kirouane" />
     <meta property="og:title" content="Ayoub Kirouane" />
-    <meta property="og:description" content="AI Engineer. Building intelligent systems from scratch." />
+    <meta property="og:description" content="ML Lead at Kiefer TEK, heading the Sophea Research Lab. Language models, retrieval systems, and production ML tooling." />
     <meta property="og:url" content="https://kirouane-ayoub.github.io/" />
     <meta name="twitter:card" content="summary" />
     <title>Ayoub Kirouane</title>
@@ -16,8 +16,9 @@
     <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <header>
-        <a href="/" class="site-name">ayoub kirouane</a>
+    <header class="hero">
+        <h1 class="site-name">ayoub kirouane</h1>
+        <p class="role">ML Lead @ Kiefer TEK · Sophea Research Lab</p>
         <nav>
             <a href="https://github.com/kirouane-Ayoub" target="_blank">GitHub</a>
             <a href="https://x.com/ayoub_kirouane" target="_blank">Twitter</a>
@@ -25,17 +26,18 @@
             <a href="https://medium.com/@ayoubkirouane3" target="_blank">Medium</a>
             <a href="https://www.tiktok.com/@ayoub.kirouane" target="_blank">TikTok</a>
         </nav>
+        <p class="tagline">I build intelligent systems from scratch — language models, retrieval, and production ML tooling.</p>
     </header>
 
     <main>
-        <section class="intro">
-            <p><strong>Senior ML Engineer</strong> focused on building intelligent systems from scratch. I work on language models, retrieval systems, and production ML tooling.</p>
-            <p>Currently leading research and development of VLMs and multimodal AI systems for analyzing and interpreting technical drawings.</p>
+        <section id="papers-section" hidden>
+            <h2 class="section-label">Publications</h2>
+            <div id="papers-list" class="entry-list"></div>
         </section>
 
         <section>
             <h2 class="section-label">Projects</h2>
-            <div id="projects-list" class="entry-list"></div>
+            <div id="projects-list"></div>
         </section>
 
         <section>
