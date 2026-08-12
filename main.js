@@ -13,38 +13,102 @@ document.addEventListener("DOMContentLoaded", () => {
         window.addEventListener("resize", update);
     };
 
-    // Load publications from arXiv (auto-updates when new papers are published).
-    // Paper list + thumbnails are cached in localStorage: repeat visits render
-    // instantly and survive arXiv API downtime/rate limits.
+    // Publications, fully dynamic: arXiv (real-time but occasionally down) and
+    // OpenAlex (fast and reliable but indexes new papers late) are queried in
+    // parallel and merged — whichever answers first paints the section.
+    // Thumbnails are rendered in-browser from the PDFs and cached per visitor.
     const renderPapers = papers => {
         const esc = s => s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/"/g, "&quot;");
         document.getElementById("papers-list").innerHTML = papers.map(p => `
             <a href="${p.absUrl}" target="_blank" class="entry">
-                <img class="paper-thumb" data-id="${p.id}" alt="" loading="lazy">
+                <img class="paper-thumb" data-id="${p.id}" alt="">
                 <span class="entry-title">${esc(p.title)}</span>
                 <span class="entry-meta">arXiv · ${p.year}</span>
                 <span class="entry-desc">${esc(p.summary)}</span>
             </a>
         `).join('');
-        document.getElementById("papers-section").hidden = false;
-        addRowNav(document.getElementById("papers-list"));
-
-        // First-page thumbnails: from cache, else rendered once with pdf.js
-        const missing = [];
         papers.forEach(p => {
             const data = localStorage.getItem("thumb:" + p.id);
             if (data) document.querySelector(`img[data-id="${p.id}"]`).src = data;
-            else missing.push(p);
         });
-        if (!missing.length) return;
+        document.getElementById("papers-section").hidden = false;
+        addRowNav(document.getElementById("papers-list"));
+    };
 
+    const shown = new Map();
+    const mergePapers = papers => {
+        let changed = false;
+        for (const p of papers) if (!shown.has(p.id)) { shown.set(p.id, p); changed = true; }
+        if (!changed) return;
+        // ponytail: post-2007 arXiv ids (YYMM.NNNNN) sort chronologically as strings
+        const all = [...shown.values()].sort((a, b) => b.id.localeCompare(a.id));
+        renderPapers(all);
+        fillThumbs(all.filter(p => !localStorage.getItem("thumb:" + p.id)));
+    };
+
+    // Note: arXiv's own query API sends no CORS headers, so it can't be called
+    // from a browser — these two both can, and both index all arXiv papers.
+    const arxivIdOf = w => {
+        const url = ((w.primary_location || {}).landing_page_url || "") + " " + (w.doi || "");
+        const m = url.match(/arxiv(?:\.org\/abs\/|\.)(\d{4}\.\d{4,5})/i);
+        return m ? m[1] : null;
+    };
+
+    fetch("https://api.openalex.org/works?filter=raw_author_name.search:ayoub%20kirouane&sort=publication_date:desc&per-page=50")
+        .then(r => r.json())
+        .then(d => {
+            const deinvert = inv => {
+                if (!inv) return "";
+                const words = [];
+                for (const [w, positions] of Object.entries(inv))
+                    for (const pos of positions) words[pos] = w;
+                return words.join(" ");
+            };
+            mergePapers(d.results
+                .map(w => ({ w, id: arxivIdOf(w) }))
+                .filter(x => x.id)
+                .map(({ w, id }) => ({
+                    id,
+                    absUrl: `https://arxiv.org/abs/${id}`,
+                    pdfUrl: `https://arxiv.org/pdf/${id}`,
+                    title: w.display_name,
+                    summary: deinvert(w.abstract_inverted_index),
+                    year: String(w.publication_year),
+                })));
+        })
+        .catch(() => {});
+
+    fetch("https://api.semanticscholar.org/graph/v1/author/2454421288/papers?fields=title,abstract,year,externalIds&limit=100")
+        .then(r => r.json())
+        .then(d => {
+            mergePapers((d.data || [])
+                .filter(p => (p.externalIds || {}).ArXiv)
+                .map(p => {
+                    const id = p.externalIds.ArXiv;
+                    return {
+                        id,
+                        absUrl: `https://arxiv.org/abs/${id}`,
+                        pdfUrl: `https://arxiv.org/pdf/${id}`,
+                        title: p.title,
+                        summary: p.abstract || "",
+                        year: String(p.year || ""),
+                    };
+                }));
+        })
+        .catch(() => {});
+
+    const thumbsInFlight = new Set();
+    const fillThumbs = papers => {
+        papers = papers.filter(p => !thumbsInFlight.has(p.id));
+        if (!papers.length) return;
+        papers.forEach(p => thumbsInFlight.add(p.id));
         import("https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.8.69/pdf.min.mjs").then(async pdfjs => {
             pdfjs.GlobalWorkerOptions.workerSrc = "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.8.69/pdf.worker.min.mjs";
-            for (const p of missing) {
+            for (const p of papers) {
                 try {
                     const pdf = await pdfjs.getDocument(p.pdfUrl).promise;
                     const page = await pdf.getPage(1);
-                    const scale = 160 / page.getViewport({ scale: 1 }).width;
+                    const scale = 480 / page.getViewport({ scale: 1 }).width;
                     const vp = page.getViewport({ scale });
                     const canvas = document.createElement("canvas");
                     canvas.width = vp.width;
@@ -59,33 +123,6 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         }).catch(() => {});
     };
-
-    const cachedPapers = JSON.parse(localStorage.getItem("papers-v1") || "null");
-    if (cachedPapers && cachedPapers.length) renderPapers(cachedPapers);
-
-    fetch("https://export.arxiv.org/api/query?search_query=au:%22Kirouane%22&sortBy=submittedDate&sortOrder=descending&max_results=50")
-        .then(r => r.text())
-        .then(xml => {
-            const doc = new DOMParser().parseFromString(xml, "text/xml");
-            const papers = [...doc.querySelectorAll("entry")]
-                .filter(e => [...e.querySelectorAll("author name")]
-                    .some(n => /ayoub\s+kirouane|kirouane,?\s+ayoub/i.test(n.textContent)))
-                .map(e => {
-                    const absUrl = e.querySelector("id").textContent.trim().replace("http://", "https://");
-                    return {
-                        id: absUrl.split("/abs/")[1].replace(/v\d+$/, ""),
-                        absUrl,
-                        pdfUrl: absUrl.replace("/abs/", "/pdf/"),
-                        title: e.querySelector("title").textContent.replace(/\s+/g, " ").trim(),
-                        summary: e.querySelector("summary").textContent.replace(/\s+/g, " ").trim(),
-                        year: e.querySelector("published").textContent.slice(0, 4),
-                    };
-                });
-            if (!papers.length) return;
-            try { localStorage.setItem("papers-v1", JSON.stringify(papers)); } catch {}
-            if (JSON.stringify(papers) !== JSON.stringify(cachedPapers)) renderPapers(papers);
-        })
-        .catch(() => {});
 
     // Load projects, grouped by the ### headings in content.md
     fetch("content.md")
