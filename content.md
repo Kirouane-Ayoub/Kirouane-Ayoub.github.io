@@ -1,4 +1,5 @@
 ### Custom Language Models
+- [Nano-models](https://github.com/Kirouane-Ayoub/Nano-models): Minimal, from-scratch PyTorch implementations of modern LLM architectures (GPT, Qwen, DeepSeek MoE/MLA, Qwen-Next hybrid attention), each a single self-contained file for learning. [LLM, From-Scratch, PyTorch, Transformers]
 - [Custom-Mamba-Transformer](https://github.com/Kirouane-Ayoub/MambaTransformer): A custom implementation of the Mamba-Transformer model. [PyTorch, Transformers, Mamba]
 - [Custom-MOE](https://github.com/Kirouane-Ayoub/Custom-MOE): A custom implementation of the Mixture of Experts (MOE) model. [PyTorch, MOE , Transformers]
 - [Custom-tiny-Mamba](https://github.com/Kirouane-Ayoub/Mamba4Darija): A tiny Mamba model trained on the Algerian Darija dialect. [LLM, Fine-Tuning, Darija]
@@ -8,6 +9,7 @@
 - [Custom-Siglip](https://github.com/Kirouane-Ayoub/Custom-siglip): A personal PyTorch implementation of SigLIP (Sigmoid Loss for Language-Image Pre-training) created as a learning project to understand CLIP and SigLIP architectures. [VLM, Fine-Tuning, Transformers]
 
 ### AI Tooling
+- [Avatar](https://github.com/Kirouane-Ayoub/avatar): A fully local, real-time speech-to-speech voice agent with a 3D lip-synced avatar, built on LiveKit. [LiveKit, STT, TTS, Mem0, React]
 - [PDF-Parser-API](https://github.com/Kirouane-Ayoub/PDF-Parser-API): A production-grade FastAPI service for processing PDF files . [Parsing, Fast-API, Python]
 - [Speech 2 Text Data Labeler](https://github.com/Kirouane-Ayoub/STT-Data-Labeler): A simple web app for creating labeled speech datasets by pairing text labels with recorded audio samples. [Gradio, Python , STT , STT ,Data Labeling]
 - [PDF Image Labeling Tool](https://github.com/Kirouane-Ayoub/PDF-Image-Labeling): A web-based tool for converting PDF files into images, labeling each page, and exporting a machine learning-ready dataset. [Gradio, Python , Data Labeling]
