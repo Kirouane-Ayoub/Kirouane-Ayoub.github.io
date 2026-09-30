@@ -255,3 +255,88 @@ footer p {
     color: var(--color-text-tertiary);
     text-align: center;
 }
+
+/* Book showcase and reading page */
+.book-feature {
+    display: grid;
+    grid-template-columns: minmax(150px, 220px) minmax(0, 1fr);
+    align-items: center;
+    gap: 3rem;
+    padding: 2rem;
+    border: 1px solid #e2e4df;
+    border-radius: 8px;
+    background: #f1f3ef;
+}
+.book-cover-link { display: block; }
+.book-cover {
+    display: block;
+    width: 100%;
+    height: auto;
+    box-shadow: 0 14px 30px -14px #20272566, 0 1px 3px #20272522;
+}
+.book-kicker {
+    font-size: 0.7rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #596258;
+    margin-bottom: 0.8rem;
+}
+.book-copy h3, .book-copy h1 {
+    font-size: clamp(1.35rem, 3vw, 2rem);
+    font-weight: 600;
+    line-height: 1.25;
+    letter-spacing: -0.055em;
+}
+.book-copy h3 a { color: inherit; text-decoration: none; }
+.book-copy h3 a:hover { text-decoration: underline; text-underline-offset: 4px; }
+.book-subtitle { font-size: 1.2rem; color: #805b40; margin-top: 0.4rem; }
+.book-description { font-size: 0.86rem; margin: 1.1rem 0; color: #50574f; line-height: 1.85; }
+.book-facts, .book-byline { font-size: 0.75rem; color: #596258; }
+.book-byline { margin-top: 0.8rem; }
+.book-actions { display: flex; flex-wrap: wrap; gap: 0.65rem; margin: 1.4rem 0 1rem; }
+.book-button {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.7rem;
+    min-height: 44px;
+    padding: 0.7rem 1rem;
+    border: 1px solid #bbc3b9;
+    border-radius: 4px;
+    color: #202725;
+    font-size: 0.78rem;
+    text-decoration: none;
+    transition: background-color 0.15s, border-color 0.15s;
+}
+.book-button:hover { background: #e2e7df; border-color: #6c7968; }
+.book-button-primary { background: #202725; border-color: #202725; color: #fff; }
+.book-button-primary:hover { background: #3a483e; border-color: #3a483e; }
+.book-text-link { color: #505b4e; font-size: 0.78rem; text-underline-offset: 4px; }
+.book-text-link:hover { color: #202725; }
+.book-note { font-size: 0.75rem; color: #626960; line-height: 1.8; }
+.book-note a { color: inherit; text-underline-offset: 3px; }
+.book-page-header { display: flex; justify-content: space-between; align-items: center; gap: 1rem; padding: 2rem 0; }
+.book-page-header nav { margin: 0; }
+.book-page-header nav a { color: #596258; }
+.book-intro { padding: 2.5rem; grid-template-columns: minmax(160px, 240px) minmax(0, 1fr); }
+.book-topics { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2rem; margin-bottom: 1.5rem; }
+.book-topics h3 { font-size: 0.86rem; margin-bottom: 0.65rem; }
+.book-topics p { font-size: 0.8rem; color: var(--color-text-secondary); line-height: 1.85; }
+.book-reader-section, .book-feedback { margin-top: 3.5rem; scroll-margin-top: 1.5rem; }
+.book-section-heading { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem; align-items: baseline; }
+.book-section-heading h2, .book-feedback h2 { font-size: 1.25rem; font-weight: 600; letter-spacing: -0.04em; }
+.reader-hint { margin: 0.8rem 0 1.25rem; }
+.book-reader { display: block; width: 100%; height: 80vh; min-height: 440px; border: 1px solid #d9ded6; border-radius: 4px; background: #e6e9e3; }
+.book-reader-fallback { padding: 3rem 1.5rem; text-align: center; }
+.book-reader-fallback p { margin-bottom: 1rem; }
+.book-feedback { border-top: 1px solid #d9ded6; padding-top: 2rem; }
+.book-feedback > p:not(.book-kicker):not(.book-note) { max-width: 650px; font-size: 0.86rem; color: var(--color-text-secondary); margin: 1rem 0 1.5rem; }
+.book-feedback .book-note { margin-top: 1rem; overflow-wrap: anywhere; }
+a:focus-visible, button:focus-visible { outline: 2px solid #805b40; outline-offset: 5px; }
+@media (max-width: 640px) {
+    .book-feature, .book-intro { grid-template-columns: 1fr; gap: 2rem; padding: 1.5rem; }
+    .book-cover-link { width: min(65%, 220px); margin: 0 auto; }
+    .book-topics { grid-template-columns: 1fr; gap: 1.5rem; }
+    .book-page-header { flex-wrap: wrap; }
+    .book-reader { height: 70vh; }
+}
